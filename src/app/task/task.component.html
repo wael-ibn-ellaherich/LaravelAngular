@@ -1,0 +1,15 @@
+<form (ngSubmit)="addTask()">
+  <label>Title:</label>
+  <input type="text" [(ngModel)]="newTask.title" name="title" required>
+
+  <label>Description:</label>
+  <textarea [(ngModel)]="newTask.description" name="description" required></textarea>
+
+  <label>Priority:</label>
+  <input type="number" [(ngModel)]="newTask.priority" name="priority" min="1" max="5" required>
+
+  <label>Due Date:</label>
+  <input type="date" [(ngModel)]="newTask.due_date" name="due_date" required>
+
+  <button type="submit" [disabled]="!isFormValid()">Add Task</button>
+</form>
